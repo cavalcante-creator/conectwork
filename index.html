@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Conectwork</title>
+<title>Conectwork · Plataforma mais completa em outsourcing</title>
 <meta name="theme-color" content="#081638">
-<meta name="description" content="Conectwork · integração que conecta empresas: cobranças, notas e pagamentos entre contratantes, intermediárias e profissionais.">
+<meta name="description" content="Conectwork · plataforma mais completa em outsourcing. Toda papelada e burocracia em um só lugar, na palma da sua mão.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -580,6 +580,9 @@ tr.tot td{background:var(--surface2)!important;font-weight:600}
 .offbar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:#8A5300;color:#fff;text-align:center;font-size:13px;padding:6px 12px}
 .bellbtn{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;cursor:pointer}
 .bellbtn b{background:var(--danger);color:#fff;border-radius:999px;padding:0 6px;font-size:11px}.bellbtn svg.i{width:15px;height:15px}
+.brandpanel .tagline{font-size:22px;line-height:1.35;color:#fff;font-weight:500;margin-top:22px;max-width:30ch}
+.brandpanel .tagline+.lead{margin-top:14px}
+@media (max-width:860px){.brandpanel .tagline{display:block;font-size:18px;margin-top:14px}}
 </style>
 </head>
 <body>
@@ -918,8 +921,8 @@ function renderLogin(){
       ${us.map(u=>`<button class="uacc" data-uid="${u.id}"><span class="t"><strong>${esc(u.nome)}</strong><small>${esc(CARGOS[u.cargo]?CARGOS[u.cargo].nome:'')}</small></span>${ic('arrow')}</button>`).join('')}</div>`; }).join('');
   $('#app').innerHTML=`<div class="login">
     <section class="brandpanel">${CURVES}
-      <div style="position:relative">${LOGO(120)}<h1>Conect<span>work</span></h1><div class="slogan">INTEGRAÇÃO QUE CONECTA EMPRESAS</div>
-        <p class="lead">Contrate profissionais, receba as notas, pague e acompanhe toda a cadeia de prestação de serviços em um só lugar, com cada empresa conferida pela nossa equipe.</p></div>
+      <div style="position:relative">${LOGO(120)}<h1>Conect<span>work</span></h1><div class="slogan">PLATAFORMA MAIS COMPLETA EM OUTSOURCING</div>
+        <p class="lead tagline">Toda papelada e burocracia em um só lugar, na palma da sua mão.</p><p class="lead">Contrate serviços, receba as notas, pague e acompanhe toda a cadeia de prestação de serviços, com cada empresa conferida pela nossa equipe.</p></div>
       <div class="pillars">
         <div class="pillar">${ic('net')}<span>Conexão entre empresas</span></div><div class="pillar">${ic('hand')}<span>Troca de serviços</span></div>
         <div class="pillar">${ic('shield')}<span>Segurança e confiança</span></div><div class="pillar">${ic('bolt')}<span>Agilidade nos processos</span></div>
@@ -2072,8 +2075,8 @@ function renderLogin(){
       <button class="btn" id="lNovaOk">${conv?'Criar senha e entrar':'Salvar senha nova'}</button></div>`; }
   $('#app').innerHTML=`<div class="login">
     <section class="brandpanel">${CURVES}
-      <div style="position:relative">${LOGO(120)}<h1>Conect<span>work</span></h1><div class="slogan">INTEGRAÇÃO QUE CONECTA EMPRESAS</div>
-        <p class="lead">Contrate profissionais, receba as notas, pague e acompanhe toda a cadeia de prestação de serviços em um só lugar, com cada empresa conferida pela nossa equipe.</p></div>
+      <div style="position:relative">${LOGO(120)}<h1>Conect<span>work</span></h1><div class="slogan">PLATAFORMA MAIS COMPLETA EM OUTSOURCING</div>
+        <p class="lead tagline">Toda papelada e burocracia em um só lugar, na palma da sua mão.</p><p class="lead">Contrate serviços, receba as notas, pague e acompanhe toda a cadeia de prestação de serviços, com cada empresa conferida pela nossa equipe.</p></div>
       <div class="pillars"><div class="pillar">${ic('net')}<span>Conexão entre empresas</span></div><div class="pillar">${ic('hand')}<span>Troca de serviços</span></div><div class="pillar">${ic('shield')}<span>Segurança e confiança</span></div><div class="pillar">${ic('bolt')}<span>Agilidade nos processos</span></div></div>
     </section>
     <section class="loginside">
