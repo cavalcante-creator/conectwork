@@ -3,7 +3,8 @@
 Protótipo navegável do Conectwork (dados fictícios, salvos só no aparelho de quem usa).
 Funciona como aplicativo instalável (PWA) quando publicado em HTTPS, por exemplo no GitHub Pages.
 
-## Apresentação
+## Documentos
+Explicação simples do projeto: `explicacao.pdf`.
 O PDF completo do projeto fica em `apresentacao.pdf` (no ar: `https://cavalcante-creator.github.io/conectwork/apresentacao.pdf`).
 
 ## Publicar no GitHub Pages

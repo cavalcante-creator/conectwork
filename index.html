@@ -605,7 +605,7 @@ function docsReq(e){
 }
 
 /* ===================== Dados ===================== */
-const KEY='conectwork-proto-v5';
+const KEY='conectwork-proto-v7';
 const D=(n,t)=>({nome:n,tam:t});
 function seedBase(){
   return {
@@ -622,7 +622,7 @@ function seedBase(){
       {id:'zenith',tipo:'ambos',status:'aprovado',protocolo:'CW-2026-0002',enviadoEm:'2026-09-04',avaliadoEm:'2026-09-05',taxa:2,
        dados:{cnpj:'62.944.495/0001-64',razao:'Zenith Serviços de Manutenção Ltda',fantasia:'Zenith Serviços',abertura:'2016-07-01',porte:'Empresa de pequeno porte (EPP)',regime:'Simples Nacional',cnae:'3314-7/10 — Manutenção de máquinas e equipamentos',im:'7788990',ie:''},
        end:{cep:'90010-150',logradouro:'Rua dos Andradas',numero:'1001',compl:'Sala 804',bairro:'Centro Histórico',cidade:'Porto Alegre',uf:'RS'},
-       resp:{nome:'Rafael Mendes',cpf:'987.654.321-00',cargo:'Sócio-administrador',email:'rafael@zenithservicos.com.br',cel:'(51) 98123-4567',emailFin:'notas@zenithservicos.com.br'},
+       resp:{nome:'Marcelo',cpf:'987.654.321-00',cargo:'Sócio-administrador',email:'marcelo@zenithservicos.com.br',cel:'(51) 98123-4567',emailFin:'notas@zenithservicos.com.br'},
        banco:{banco:'001 — Banco do Brasil',tipoConta:'Corrente',agencia:'3456',conta:'12345-6',pixTipo:'E-mail',pix:'financeiro@zenithservicos.com.br'},
        docs:{contrato:D('alteracao-contratual-2024.pdf',560000),cartao:D('cartao-cnpj-zenith.pdf',90000),endereco:D('iptu-2026.pdf',310000),identidade:D('rg-rafael.pdf',420000),certificado:D('zenith-a1.pfx',6200)},
        conferidos:{contrato:true,cartao:true,endereco:true,identidade:true,certificado:true},
@@ -666,12 +666,12 @@ function seed(){
   const M={colafix:['cobrancas','integracao','equipe','catalogo','conta'],zenith:['cobrancas','equipe','profissionais','emissao','catalogo','conta'],'mei-joao':['cobrancas','conta'],nexus:['cobrancas','equipe','profissionais'],alfa:[]};
   d.empresas.forEach(e=>e.modulos=M[e.id]||[]);
   d.usuarios=[
-    {id:'u-ana',nome:'Ana Ribeiro',email:'ana@conectwork.com.br',empresa:'master',cargo:'admin',ativo:true},
+    {id:'u-ana',nome:'Iasmyn',email:'iasmyn@conectwork.com.br',empresa:'master',cargo:'admin',ativo:true},
     {id:'u-marina',nome:'Marina Costa',email:'marina@colafix.com.br',empresa:'colafix',cargo:'admin',ativo:true},
-    {id:'u-paula',nome:'Paula Nunes',email:'paula.rh@colafix.com.br',empresa:'colafix',cargo:'rh',ativo:true},
+    {id:'u-paula',nome:'Juliana',email:'juliana.rh@colafix.com.br',empresa:'colafix',cargo:'rh',ativo:true},
     {id:'u-carlos',nome:'Carlos Teixeira',email:'carlos.fin@colafix.com.br',empresa:'colafix',cargo:'financeiro',ativo:true},
-    {id:'u-rafael',nome:'Rafael Mendes',email:'rafael@zenithservicos.com.br',empresa:'zenith',cargo:'admin',ativo:true},
-    {id:'u-juliana',nome:'Juliana Prado',email:'juliana@zenithservicos.com.br',empresa:'zenith',cargo:'financeiro',ativo:true},
+    {id:'u-rafael',nome:'Marcelo',email:'marcelo@zenithservicos.com.br',empresa:'zenith',cargo:'admin',ativo:true},
+    {id:'u-juliana',nome:'Larissa Prado',email:'larissa@zenithservicos.com.br',empresa:'zenith',cargo:'financeiro',ativo:true},
     {id:'u-diego',nome:'Diego Alves',email:'diego@zenithservicos.com.br',empresa:'zenith',cargo:'operacional',ativo:true},
     {id:'u-joao',nome:'João Pereira',email:'joao.eletrica@email.com',empresa:'mei-joao',cargo:'admin',ativo:true},
     {id:'u-fernanda',nome:'Fernanda Rocha',email:'fernanda@nexusservicos.com.br',empresa:'nexus',cargo:'admin',ativo:true},
@@ -709,29 +709,29 @@ seed=function(){ const d=__seedRep();
   let n=0; const A=(pessoa,de,org,autor,data,q,s,pp,c,txt,resp)=>({id:'A'+(++n),pessoa,de,org,autor,data,n:{q,s,p:pp,c},txt:txt||'',resp:resp||''});
   d.avaliacoes=[
     A('p-joao','colafix','Colafix','Marina Costa','2026-10-08',5,5,5,5,'Resolveu a pane do painel da linha 2 no mesmo dia. Muito cuidadoso com bloqueio e etiquetagem.'),
-    A('p-joao','colafix','Colafix','Paula Nunes','2026-09-09',5,5,4,5,'Sempre manda a nota no dia certo. Facilita muito o fechamento.','Obrigado, Paula! Sigo à disposição.'),
-    A('p-joao','zenith','Zenith Serviços','Rafael Mendes','2026-08-20',5,5,5,4,'Um dos nossos melhores eletricistas.'),
+    A('p-joao','colafix','Colafix','Juliana','2026-09-09',5,5,4,5,'Sempre manda a nota no dia certo. Facilita muito o fechamento.','Obrigado, Juliana! Sigo à disposição.'),
+    A('p-joao','zenith','Zenith Serviços','Marcelo','2026-08-20',5,5,5,4,'Um dos nossos melhores eletricistas.'),
     A('p-joao','colafix','Colafix','Marina Costa','2026-07-10',5,4,5,5,'Bom trabalho na parada programada.'),
     A('p-marcos','colafix','Colafix','Marina Costa','2026-09-15',5,5,4,4,'Troca dos redutores feita antes do prazo.'),
     A('p-marcos','zenith','Zenith Serviços','Diego Alves','2026-07-02',4,5,5,4,''),
-    A('p-marcos','colafix','Colafix','Paula Nunes','2026-05-20',5,4,5,5,'Pessoa de confiança na manutenção.'),
+    A('p-marcos','colafix','Colafix','Juliana','2026-05-20',5,4,5,5,'Pessoa de confiança na manutenção.'),
     A('p-lucas','colafix','Colafix','Marina Costa','2026-08-12',4,4,3,4,'Bom operador, precisa melhorar o horário de chegada.','Entendido, já ajustei meu transporte.'),
     A('p-lucas','zenith','Zenith Serviços','Diego Alves','2026-06-30',4,5,4,4,''),
-    A('p-tiago','colafix','Colafix','Paula Nunes','2026-09-30',4,5,5,4,''),
-    A('p-tiago','zenith','Zenith Serviços','Rafael Mendes','2026-07-14',5,4,4,5,'Sempre disposto a ajudar a equipe.'),
+    A('p-tiago','colafix','Colafix','Juliana','2026-09-30',4,5,5,4,''),
+    A('p-tiago','zenith','Zenith Serviços','Marcelo','2026-07-14',5,4,4,5,'Sempre disposto a ajudar a equipe.'),
     A('p-tiago','colafix','Colafix','Marina Costa','2026-06-11',4,4,5,4,''),
-    A('p-bruna','zenith','Zenith Serviços','Rafael Mendes','2026-10-02',5,5,5,5,'Reprogramou o CLP da envasadora sem parar a produção.'),
+    A('p-bruna','zenith','Zenith Serviços','Marcelo','2026-10-02',5,5,5,5,'Reprogramou o CLP da envasadora sem parar a produção.'),
     A('p-bruna','zenith','Cliente da Zenith · indústria química','Supervisor de manutenção','2026-08-18',5,5,5,5,'Domina inversores e supervisório.'),
     A('p-bruna','zenith','Cliente da Zenith · alimentos','Coordenadora de engenharia','2026-04-27',5,5,4,5,''),
     A('p-rodrigo','zenith','Zenith Serviços','Diego Alves','2026-09-22',5,4,4,4,'Solda de qualidade, acabamento muito bom.'),
     A('p-rodrigo','zenith','Cliente da Zenith · metalurgia','Encarregado de caldeiraria','2026-06-05',4,5,4,4,''),
-    A('p-rodrigo','zenith','Zenith Serviços','Rafael Mendes','2026-03-18',5,4,5,4,''),
+    A('p-rodrigo','zenith','Zenith Serviços','Marcelo','2026-03-18',5,4,5,4,''),
     A('p-vanessa','zenith','Cliente da Zenith · papel e celulose','Gerente de manutenção','2026-08-08',5,5,5,5,'Montou o plano de preventivas do zero.'),
-    A('p-vanessa','zenith','Zenith Serviços','Rafael Mendes','2026-05-14',5,5,5,4,''),
+    A('p-vanessa','zenith','Zenith Serviços','Marcelo','2026-05-14',5,5,5,4,''),
     A('p-vanessa','zenith','Cliente da Zenith · alimentos','Supervisor de PCM','2026-02-20',5,4,5,5,''),
     A('p-andre','colafix','Colafix','Marina Costa','2026-10-01',5,5,4,4,''),
     A('p-andre','nexus','Nexus Serviços','Fernanda Rocha','2026-07-21',4,5,5,4,'Muito atento à segurança.'),
-    A('p-andre','colafix','Colafix','Paula Nunes','2026-04-09',5,4,4,5,''),
+    A('p-andre','colafix','Colafix','Juliana','2026-04-09',5,4,4,5,''),
     A('p-felipe','nexus','Nexus Serviços','Fernanda Rocha','2026-10-15',5,5,5,5,'Entregas sempre no horário.'),
     A('p-camila','nexus','Cliente da Nexus · química','Gerente da qualidade','2026-09-03',5,5,4,5,''),
     A('p-camila','nexus','Nexus Serviços','Fernanda Rocha','2026-06-17',4,5,5,5,''),
@@ -1806,7 +1806,7 @@ function bind4(){ bind5();
 const __seed3=seed;
 seed=function(){ const d=__seed3();
   d.avaliacoes.forEach(a=>{ if(a.org==='Zenith Serviços'||a.org==='Nexus Serviços'){ const p=d.pessoas.find(x=>x.id===a.pessoa);
-    if(p&&p.alocado){ a.de=p.alocado; a.org='Colafix'; a.autor='Paula Nunes'; } else { a.org='Cliente da '+(p&&p.vinculo==='nexus'?'Nexus':'Zenith')+' · indústria'; a.autor='Gestor do cliente'; } } });
+    if(p&&p.alocado){ a.de=p.alocado; a.org='Colafix'; a.autor='Juliana'; } else { a.org='Cliente da '+(p&&p.vinculo==='nexus'?'Nexus':'Zenith')+' · indústria'; a.autor='Gestor do cliente'; } } });
   const TEL={'u-paula':'(51) 99811-2200','u-carlos':'(51) 99733-4410','u-juliana':'(51) 98455-6120','u-diego':'(51) 99120-7788','u-ana':'(51) 99000-1234'};
   d.usuarios.forEach(u=>{ const e=d.empresas.find(x=>x.id===u.empresa); u.tel=TEL[u.id]||(e&&u.cargo==='admin'?e.resp.cel:''); u.zap=true; });
   const W=(emp,ev,texto,em)=>({id:'W'+emp+em,emp,ev,texto,em,lida:false});
@@ -1900,7 +1900,7 @@ const TOUR=[
   {u:'u-ana',tab:'inicio',sel:'.hero',who:'Equipe Conectwork · master',t:'A visão da rede inteira',d:'A equipe master acompanha o volume que passa pela plataforma, o que está em aberto, as taxas recebidas e os cadastros esperando análise.'},
   {u:'u-ana',tab:'cadastros',sel:'main .card',who:'Equipe Conectwork · master',t:'Análise de cadastros',d:'Cada empresa nova cai aqui. A equipe confere dados e documentos um a um e decide: aprovar, pedir ajuste com motivo escrito ou recusar. Também define a taxa e libera os módulos de cada empresa.'},
   {u:'u-ana',tab:'roadmap',sel:'.phases',who:'Equipe Conectwork · master',t:'As três fases do produto',d:'Fase 1: piloto na Colafix. Fase 2: a Zenith opera os profissionais e emite notas pela plataforma. Fase 3: catálogo aberto e serviços financeiros com o banco dos sócios. O que tem ✓ já está neste protótipo.'},
-  {u:'u-paula',tab:'api',sel:'.steps3',who:'Colafix · RH',t:'Integração com o painel do RH',d:'No painel da Colafix, o RH confere as horas pelo Face ID e aperta "Fechar valor". O fechamento chega aqui sozinho e vira o pedido de nota para o prestador. A Paula, do RH, só vê o que precisa: cobranças, integração e catálogo.'},
+  {u:'u-paula',tab:'api',sel:'.steps3',who:'Colafix · RH',t:'Integração com o painel do RH',d:'No painel da Colafix, o RH confere as horas pelo Face ID e aperta "Fechar valor". O fechamento chega aqui sozinho e vira o pedido de nota para o prestador. A Juliana, do RH, só vê o que precisa: cobranças, integração e catálogo.'},
   {u:'u-marina',tab:'inicio',sel:'.hero',who:'Colafix · administradora',t:'O que está pronto para pagar',d:'A Marina abre o sistema e já vê quanto tem para pagar, o que espera nota e a taxa negociada com o Conectwork.'},
   {u:'u-marina',tab:'inicio',sel:'.grid-main .stack > .card',who:'Colafix · administradora',t:'Precisa da sua ação',d:'Tudo o que depende dela, em ordem de urgência: pagamentos primeiro, depois a avaliação mensal dos terceirizados que trabalham na Colafix.'},
   {u:'u-marina',tab:'pagar',sel:'main .card',who:'Colafix · administradora',t:'Cobranças, notas e pagamento em lote',d:'Cada linha mostra a situação da nota, do pedido ao pagamento. Marque várias notas conferidas e pague todas de uma vez. Clicando na linha, o detalhe abre ao lado, e dá para passar de uma cobrança para a outra pelas setas.'},
